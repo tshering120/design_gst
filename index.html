@@ -23,21 +23,268 @@
     <link rel="stylesheet" href="assets/css/nice-select.css">
     <link rel="stylesheet" href="assets/css/style.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js" type="text/javascript"></script>
+    <style>.googleCalendar{
+        position: relative;
+        height: 0;
+        width: 100%;
+        padding-bottom: 95%;
+      }
+      
+      .googleCalendar iframe{
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+      }
+      
+ul.resp-tabs-list, p {
+    margin: 0px;
+    padding: 0px;
+}
+
+.resp-tabs-list li {
+    font-weight: 600;
+    font-size: 13px;
+    display: inline-block;
+    padding: 13px 15px;
+    margin: 0 4px 0 0;
+    list-style: none;
+    cursor: pointer;
+    float: left;
+}
+
+.resp-tabs-container {
+    padding: 0px;
+    background-color: #fff;
+    clear: left;
+}
+
+h2.resp-accordion {
+    cursor: pointer;
+    padding: 5px;
+    display: none;
+}
+
+.resp-tab-content {
+    display: none;
+    padding: 15px;
+}
+
+.resp-tab-active {
+	border: 1px solid #5AB1D0 !important;
+	border-bottom: none;
+	margin-bottom: -1px !important;
+	padding: 12px 14px 14px 14px !important;
+	border-top: 4px solid #5AB1D0 !important;
+	border-bottom: 0px #fff solid !important;
+}
+
+.resp-tab-active {
+    border-bottom: none;
+    background-color: #fff;
+}
+
+.resp-content-active, .resp-accordion-active {
+    display: block;
+}
+
+.resp-tab-content {
+    border: 1px solid #c1c1c1;
+	border-top-color: #5AB1D0;
+}
+
+h2.resp-accordion {
+    font-size: 13px;
+    border: 1px solid #c1c1c1;
+    border-top: 0px solid #c1c1c1;
+    margin: 0px;
+    padding: 10px 15px;
+}
+
+h2.resp-tab-active {
+    border-bottom: 0px solid #c1c1c1 !important;
+    margin-bottom: 0px !important;
+    padding: 10px 15px !important;
+}
+
+h2.resp-tab-title:last-child {
+    border-bottom: 12px solid #c1c1c1 !important;
+    background: blue;
+}
+
+/*-----------Vertical tabs-----------*/
+.resp-vtabs ul.resp-tabs-list {
+    float: left;
+    width: 30%;
+}
+
+.resp-vtabs .resp-tabs-list li {
+    display: block;
+    padding: 15px 15px !important;
+    margin: 0 0 4px;
+    cursor: pointer;
+    float: none;
+}
+
+.resp-vtabs .resp-tabs-container {
+    padding: 0px;
+    background-color: #fff;
+    border: 1px solid #c1c1c1;
+    float: left;
+    width: 68%;
+    min-height: 250px;
+    border-radius: 4px;
+    clear: none;
+}
+
+.resp-vtabs .resp-tab-content {
+    border: none;
+    word-wrap: break-word;
+}
+
+.resp-vtabs li.resp-tab-active { 
+position: relative;
+z-index: 1;
+margin-right: -1px !important;
+padding: 14px 15px 15px 14px !important;
+border-top: 1px solid;
+border: 1px solid #5AB1D0 !important;
+border-left: 4px solid #5AB1D0 !important;
+margin-bottom: 4px !important;
+border-right: 1px #FFF solid !important;
+}
+
+.resp-arrow {
+    width: 0;
+    height: 0;
+    float: right;
+    margin-top: 3px;
+    border-left: 6px solid transparent;
+    border-right: 6px solid transparent;
+    border-top: 12px solid #c1c1c1;
+}
+
+h2.resp-tab-active span.resp-arrow {
+    border: none;
+    border-left: 6px solid transparent;
+    border-right: 6px solid transparent;
+    border-bottom: 12px solid #9B9797;
+}
+
+/*-----------Accordion styles-----------*/
+h2.resp-tab-active {
+    background: #DBDBDB;/* !important;*/
+}
+
+.resp-easy-accordion h2.resp-accordion {
+    display: block;
+}
+
+.resp-easy-accordion .resp-tab-content {
+    border: 1px solid #c1c1c1;
+}
+
+.resp-easy-accordion .resp-tab-content:last-child {
+    border-bottom: 1px solid #c1c1c1;/* !important;*/
+}
+
+.resp-jfit {
+    width: 100%;
+    margin: 0px;
+}
+
+.resp-tab-content-active {
+    display: block;
+}
+
+h2.resp-accordion:first-child {
+    border-top: 1px solid #c1c1c1;/* !important;*/
+}
+
+/*Here your can change the breakpoint to set the accordion, when screen resolution changed*/
+@media only screen and (max-width: 768px) {
+    ul.resp-tabs-list {
+        display: none;
+    }
+
+    h2.resp-accordion {
+        display: block;
+    }
+
+    .resp-vtabs .resp-tab-content {
+        border: 1px solid #C1C1C1;
+    }
+
+    .resp-vtabs .resp-tabs-container {
+        border: none;
+        float: none;
+        width: 100%;
+        min-height: 100px;
+        clear: none;
+    }
+
+    .resp-accordion-closed {
+        display: none !important;
+    }
+
+    .resp-vtabs .resp-tab-content:last-child {
+        border-bottom: 1px solid #c1c1c1 !important;
+    }
+}
+/* search */
+    
+
+.togglesearch{
+  background: #E8E8E4;
+  position: absolute;
+  top: 90px;
+  right: 30%;
+  width: 304px;
+  height: 55px;
+  line-height: 40px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.5);
+  border-top:4px solid #538aaa;
+  display: none;
+}
+
+.togglesearch:before{
+  content: "";
+  position: absolute;
+  top: -30px;
+  right: 2px;
+  border-left: 12px solid transparent;
+  border-right: 12px solid transparent;
+  border-top: 14px solid transparent;
+  border-bottom: 14px solid #538aaa;
+}
+
+.togglesearch input[type="text"]{
+  width: 220px;
+  padding: 5px 10px;
+  
+  border: 1px solid #538aaa;
+  outline: none;
+}
+
+.togglesearch input[type="button"]{
+  width: 80px;
+  padding: 5px 0;
+  background: #538aaa;
+  color: #fff;
+  margin-left: -4px;
+  border: 1px solid #538aaa;
+  outline: none;
+  cursor: pointer;
+}
+  
+
+     
+     </style>
 </head>
 
 <body>
     
-<!-- Preloader Start -->
-<div id="preloader-active">
-    <div class="preloader d-flex align-items-center justify-content-center">
-        <div class="preloader-inner position-relative">
-            <div class="preloader-circle"></div>
-            <div class="preloader-img pere-text">
-                <img src="https://www.mof.gov.bt/wp-content/themes/mofgov/images/emblem.pngg" alt="">
-            </div>
-        </div>
-    </div>
-</div>
 <!-- Preloader Start -->
 <header>
     <!-- Header Start -->
@@ -49,14 +296,16 @@
                         <div class="row d-flex justify-content-between align-items-center">
                             <div class="header-info-left">
                                 <ul>     
-                                    <li class="title"><span class="flaticon-energy"></span>Goods & Services Tax</li>
+                                    <li class="title"></span>Goods & Services Tax</li>
                                     <li>Income Tax</li>
                                     <li>Property Tax</li>
                                 </ul>
                             </div>
                             <div class="header-info-right">
                                 <ul class="header-date">
-                                    <li><span class="flaticon-calendar"></span> +97517709118</li>
+                                    <li><a href="#"class="mr-3"><span class="flaticon-calendar"></span>3999</a></li>
+                                    <li style="font-size:25px;line-height: 50px !important;"><a href="#" class="mr-3">རྫོང་ཁ།</a></li>
+                                    <li><a href="#"class="genric-btn primary-border circle small mr-3"style="line-height: 38px !important;">English</a></li>
                                 </ul>
                             </div>
                         </div>
@@ -89,7 +338,13 @@
                                 <nav>                  
                                     <ul id="navigation">
                                         <li><a href="index.html">Home</a></li>
-                                        <li><a href="about.html">about</a></li>
+                                        <li><a href="#">About</a>
+                                            <ul class="submenu">
+                                                <li><a href="elements.html">History</a></li>
+                                                <li><a href="blog.html">Vision & Mission</a></li>
+                                                <li><a href="blog_details.html">Gallery</a></li>
+                                            </ul>
+                                        </li>
                                         <li><a href="#">Departments</a>
                                             <ul class="submenu">
                                                 <li><a href="blog.html">D1</a></li>
@@ -98,17 +353,26 @@
                                             </ul>
                                         </li>
                                         <li><a href="categori.html">Announcement</a></li>
-                                        <li><a href="latest_news.html">Publication</a></li>
-                                        <li><a href="contact.html">Blog</a></li>
-                                        <li><a href="#">Downloads</a>
+                                        <li><a href="#">Publication</a>
                                             <ul class="submenu">
-                                                <li><a href="blog.html">D1</a></li>
-                                                <li><a href="blog_details.html">D2</a></li>
-                                                <li><a href="elements.html">D3</a></li>
+                                                <li><a href="blog.html">Act & Policy</a></li>
+                                                <li><a href="blog_details.html">Rules</a></li>
+                                                <li><a href="elements.html">Others</a></li>
                                             </ul>
                                         </li>
-                                     
+                                        <li><a href="contact.html">Blog</a></li>
+                                        <li><a href="download.html">Downloads</a></li>
                                         <li><a href="contact.html">Contact</a></li>
+                                        <li class="searchbar">
+                                            <div class="nav-search">
+                                                <i class="fa fa-search" aria-hidden="true"></i>
+                                            </div>
+                                            
+                                             <div class="togglesearch">
+                                                <input type="text" placeholder=""/>
+                                                <input type="button" value="Search"/>
+                                            </div>
+                                        </li>
                                     </ul>
                                 </nav>
                             </div>
@@ -156,7 +420,7 @@
                                         <div class="trend-top-cap">
                                          
                                             <h2><a href="latest_news.html" data-animation="fadeInUp" data-delay=".4s" data-duration="1000ms">GST Event Title one goes here</a></h2>
-                                            <p data-animation="fadeInUp" data-delay=".6s" data-duration="1000ms">Jun 19, 2020</p>
+                                            <p data-animation="fadeInUp" data-delay=".6s" data-duration="1000ms"><a href=""class="btn btn-primary">Learn More</a></p>
                                         </div>
                                     </div>
                                 </div>
@@ -165,11 +429,11 @@
                             <div class="single-slider">
                                 <div class="trending-top mb-30">
                                     <div class="trend-top-img">
-                                        <img src="assets/img/trending/trending_top.jpg" alt="">
+                                        <img src="assets/img/trending/trending_top4.jpg" alt="">
                                         <div class="trend-top-cap">
                                          
                                             <h2><a href="latest_news.html" data-animation="fadeInUp" data-delay=".4s" data-duration="1000ms">GST Event Title two goes here</a></h2>
-                                            <p data-animation="fadeInUp" data-delay=".6s" data-duration="1000ms">Jun 19, 2020</p>
+                                            <p data-animation="fadeInUp" data-delay=".6s" data-duration="1000ms"><a href=""class="btn btn-primary">Learn More</a></p>
                                         </div>
                                     </div>
                                 </div>
@@ -178,11 +442,11 @@
                             <div class="single-slider">
                                 <div class="trending-top mb-30">
                                     <div class="trend-top-img">
-                                        <img src="assets/img/trending/trending_top.jpg" alt="">
+                                        <img src="assets/img/trending/trending_top2.jpg" alt="">
                                         <div class="trend-top-cap">
                                          
                                             <h2><a href="latest_news.html" data-animation="fadeInUp" data-delay=".4s" data-duration="1000ms">GST Event Title three goes here</a></h2>
-                                            <p data-animation="fadeInUp" data-delay=".6s" data-duration="1000ms">Jun 19, 2020</p>
+                                            <p data-animation="fadeInUp" data-delay=".6s" data-duration="1000ms"><a href=""class="btn btn-primary">Learn More</a></p>
                                         </div>
                                     </div>
                                 </div>
@@ -195,22 +459,7 @@
                         <div class="row">
                             <div class="col-lg-12 col-md-6 col-sm-6">
                                     <div class="blog_right_sidebar">
-                                        <aside class="single_sidebar_widget search_widget">
-                                            <form action="#">
-                                                <div class="form-group">
-                                                    <div class="input-group mb-3">
-                                                        <input type="text" class="form-control" placeholder='Search Keyword'
-                                                            onfocus="this.placeholder = ''"
-                                                            onblur="this.placeholder = 'Search Keyword'">
-                                                        <div class="input-group-append">
-                                                            <button class="btns" type="button"><i class="ti-search"></i></button>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                
-                                            </form>
-                                        </aside>
-                
+                                       
                                         <aside class="single_sidebar_widget post_category_widget">
                                             <h4 class="widget_title">Announcement</h4>
                                             <ul class="list cat-list">
@@ -232,6 +481,24 @@
                                                         <p></p>
                                                     </a>
                                                 </li>
+                                                <li>
+                                                    <a href="#" class="d-flex">
+                                                        <p>GST website launched</p>
+                                                        <p></p>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="#" class="d-flex">
+                                                        <p>GST website launched</p>
+                                                        <p></p>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="#" class="d-flex">
+                                                        <p>GST website launched</p>
+                                                        <p></p>
+                                                    </a>
+                                                </li>
                                               
                                             </ul>
                                         </aside>
@@ -243,6 +510,100 @@
                 </div>
             </div>
         </div>
+    </div>
+    <div class="container">
+        <br/>
+        <div class="row">
+        <!--Horizontal Tab-->
+        <div class="col-lg-12">
+        <div id="parentHorizontalTab">
+            <ul class="resp-tabs-list hor_1">
+                <li>Goods & Services Tax</li>
+                <li>Tax for..</li>
+                <li>Log in / Sign Up</li>
+            </ul>
+            <div class="resp-tabs-container hor_1">
+                <div>
+                    <p>
+                        <!--vertical Tabs-->
+
+                        <div id="ChildVerticalTab_1">
+                            <ul class="resp-tabs-list ver_1">
+                                <li>What is GST?</li>
+                                <li>What are the benefits of GST?</li>
+                                <li>Tax Information</li>
+                                <li>Tax Services</li>
+                                
+                            </ul>
+                            <div class="resp-tabs-container ver_1">
+                                <div>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum nibh urna, euismod ut ornare non, volutpat vel tortor. Integer laoreet placerat suscipit. Sed sodales scelerisque commodo. Nam porta cursus lectus. Proin nunc erat, gravida a facilisis quis, ornare id lectus. Proin consectetur nibh quis urna gravida mollis.</p>
+                                </div>
+                                <div>
+                                    <p>Lorem ipsum dolor sit amet, lerisque commodo. Nam porta cursus lectusconsectetur adipiscing elit. Vestibulum nibh urna, euismod ut ornare non, volutpat vel tortor. Integer laoreet placerat suscipit. Sed sodales sce. Proin nunc erat, gravida a facilisis quis, ornare id lectus</p>
+                                </div>
+                                <div>
+                                    <p>Suspendisse blandit velit Integer laoreet placerat suscipit. Sed sodales scelerisque commodo. Nam porta cursus lectus. Proin nunc erat, gravida a facilisis quis, ornare id lectus. Proin consectetur nibh quis Integer laoreet placerat suscipit. Sed sodales scelerisque commodo. Nam porta cursus lectus. Proin nunc erat, gravida a facilisis quis, ornare id lectus. Proin consectetur nibh quis urna gravid urna gravid eget erat suscipit in malesuada odio venenatis.</p>
+                                </div>
+                                <div>
+                                    <p>d ut ornare non, volutpat vel tortor. InLorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum nibh urna, euismod ut ornare non, volutpat vel tortor. Integer laoreet placerat suscipit. Sed sodales scelerisque commodo. Nam porta cursus lectus. Proin nunc erat, gravida a facilisis quis, ornare id lectus. Proin consectetur nibh quis urna gravida mollis.t in malesuada odio venenatis.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </p>
+                    <p>Tab 1</p>
+                </div>
+                <div>
+                    <p>
+                        <!--vertical Tabs-->
+
+                        <div id="ChildVerticalTab_2">
+                            <ul class="resp-tabs-list ver_2">
+                                <li>Employees</li>
+                                <li>Companies</li>
+                                <li>Tax agents</li>
+                            </ul>
+                            <div class="resp-tabs-container ver_2">
+                                <div>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum nibh urna, euismod ut ornare non, volutpat vel tortor. Integer laoreet placerat suscipit. Sed sodales scelerisque commodo. Nam porta cursus lectus. Proin nunc erat, gravida a facilisis quis, ornare id lectus. Proin consectetur nibh quis urna gravida mollis.</p>
+                                </div>
+                                <div>
+                                    <p>Lorem ipsum dolor sit amet, lerisque commodo. Nam porta cursus lectusconsectetur adipiscing elit. Vestibulum nibh urna, euismod ut ornare non, volutpat vel tortor. Integer laoreet placerat suscipit. Sed sodales sce. Proin nunc erat, gravida a facilisis quis, ornare id lectus</p>
+                                </div>
+                                <div>
+                                    <p>Suspendisse blandit velit Integer laoreet placerat suscipit. Sed sodales scelerisque commodo. Nam porta cursus lectus. Proin nunc erat, gravida a facilisis quis, ornare id lectus. Proin consectetur nibh quis Integer laoreet placerat suscipit. Sed sodales scelerisque commodo. Nam porta cursus lectus. Proin nunc erat, gravida a facilisis quis, ornare id lectus. Proin consectetur nibh quis urna gravid urna gravid eget erat suscipit in malesuada odio venenatis.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </p>
+                    <p>Tab 2</p>
+                </div>
+                <div>
+                    <p>
+                        <!--vertical Tabs-->
+
+                        <div id="ChildVerticalTab_3">
+                            <ul class="resp-tabs-list ver_3">
+                                <li>GST Staff</li>
+                               
+                            </ul>
+                            <div class="resp-tabs-container ver_3">
+                                <div>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum nibh urna, euismod ut ornare non, volutpat vel tortor. Integer laoreet placerat suscipit. Sed sodales scelerisque commodo. Nam porta cursus lectus. Proin nunc erat, gravida a facilisis quis, ornare id lectus. Proin consectetur nibh quis urna gravida mollis.</p>
+                                </div>
+                               
+                            </div>
+                        </div>
+                    </p>
+                    <p>Tab 3</p>
+                </div>
+            </div>
+        </div>
+        <div id="nested-tabInfo">
+            Selected tab: <span class="tabName"></span>
+        </div>
+    </div>
+    </div>
     </div>
     <section class="whats-news-area pt-50 pb-20 gray-bg">
         <div class="container">
@@ -261,10 +622,10 @@
                                 <!--Nav Button  -->                                            
                                 <nav>                                                 
                                     <div class="nav nav-tabs" id="nav-tab" role="tablist">
-                                        <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true">Announcement</a>
-                                        <a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab" aria-controls="nav-profile" aria-selected="false">Latest News</a>
-                                        <a class="nav-item nav-link" id="nav-contact-tab" data-toggle="tab" href="#nav-contact" role="tab" aria-controls="nav-contact" aria-selected="false">Previous News</a>
-                                        <a class="nav-item nav-link" id="nav-Sports" data-toggle="tab" href="#nav-nav-Sport" role="tab" aria-controls="nav-contact" aria-selected="false">Tax</a>
+                                        <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true">Latest News</a>
+                                        <a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab" aria-controls="nav-profile" aria-selected="false">Events</a>
+                                        <a class="nav-item nav-link" id="nav-contact-tab" data-toggle="tab" href="#nav-contact" role="tab" aria-controls="nav-contact" aria-selected="false">Notifications</a>
+                                        <!-- <a class="nav-item nav-link" id="nav-Sports" data-toggle="tab" href="#nav-nav-Sport" role="tab" aria-controls="nav-contact" aria-selected="false">Tax</a> -->
                                     </div>
                                 </nav>
                                 <!--End Nav Button  -->
@@ -286,8 +647,8 @@
                                                     <img src="assets/img/trending/trending_top.jpg" alt="">
                                                 </div>
                                                 <div class="whates-caption">
-                                                    <h4><a href="latest_news.html">Secretart for Economic Air plane that looks like</a></h4>
-                                                    <span>by Alice cloe   -   Jun 19, 2020</span>
+                                                    <h4><a href="latest_news.html">News Title in Short...</a></h4>
+                                                    <span>by GST Staff   -  Jun 17, 2021</span>
                                                     <p>Struggling to sell one multi-million dollar home currently on the market won’t stop actress and singer Jennifer Lopez.</p>
                                                 </div>
                                             </div>
@@ -302,7 +663,7 @@
                                                         </div>
                                                         <div class="whats-right-cap">
                                                             
-                                                            <h4><a href="latest_news.html">Portrait of group of friends ting eat. market in.</a></h4>
+                                                            <h4><a href="latest_news.html">Sub News title in short..</a></h4>
                                                             <p style="line-height: 17px;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus voluptatem nulla iure repellat magnam, perspiciatis fugiat tempore ex incidunt, cum quisquam explicabo laudantium temporibus numquam tenetur nihil. Adipisci, voluptate dolores.</p>
                                                         </div>
                                                     </div>
@@ -313,7 +674,7 @@
                                                         </div>
                                                         <div class="whats-right-cap">
                                                             
-                                                            <h4><a href="latest_news.html">Portrait of group of friends ting eat. market in.</a></h4>
+                                                            <h4><a href="latest_news.html">Sub News title in short..</a></h4>
                                                             <p style="line-height: 17px;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus voluptatem nulla iure repellat magnam, perspiciatis fugiat tempore ex incidunt, cum quisquam explicabo laudantium temporibus numquam tenetur nihil. Adipisci, voluptate dolores.</p>
                                                         </div>
                                                     </div>
@@ -324,7 +685,7 @@
                                                         </div>
                                                         <div class="whats-right-cap">
                                                            
-                                                            <h4><a href="latest_news.html">Portrait of group of friends ting eat. market in.</a></h4>
+                                                            <h4><a href="latest_news.html">Sub News title in short..</a></h4>
                                                             <p style="line-height: 17px;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus voluptatem nulla iure repellat magnam, perspiciatis fugiat tempore ex incidunt, cum quisquam explicabo laudantium temporibus numquam tenetur nihil. Adipisci, voluptate dolores.</p>
                                                         </div>
                                                     </div>
@@ -343,9 +704,8 @@
                                                     <img src="assets/img/trending/trending_top.jpg" alt="">
                                                 </div>
                                                 <div class="whates-caption">
-                                                    <h4><a href="#">Secretart for Economic Air
-                                                        plane that looks like</a></h4>
-                                                    <span>by Alice cloe   -   Jun 19, 2020</span>
+                                                    <h4><a href="#">News Title in Short...</a></h4>
+                                                    <span>by GST Staff   -  Jun 17, 2021</span>
                                                     <p>Struggling to sell one multi-million dollar home currently on the market won’t stop actress and singer Jennifer Lopez.</p>
                                                 </div>
                                             </div>
@@ -360,7 +720,7 @@
                                                         </div>
                                                         <div class="whats-right-cap">
                                                             
-                                                            <h4><a href="latest_news.html">Portrait of group of friends ting eat. market in.</a></h4>
+                                                            <h4><a href="latest_news.html">Sub News title in short..</a></h4>
                                                             <p style="line-height: 17px;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus voluptatem nulla iure repellat magnam, perspiciatis fugiat tempore ex incidunt, cum quisquam explicabo laudantium temporibus numquam tenetur nihil. Adipisci, voluptate dolores.</p>
                                                         </div>
                                                     </div>
@@ -371,7 +731,7 @@
                                                         </div>
                                                         <div class="whats-right-cap">
                                                             
-                                                            <h4><a href="latest_news.html">Portrait of group of friends ting eat. market in.</a></h4>
+                                                            <h4><a href="latest_news.html">Sub News title in short..</a></h4>
                                                             <p style="line-height: 17px;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus voluptatem nulla iure repellat magnam, perspiciatis fugiat tempore ex incidunt, cum quisquam explicabo laudantium temporibus numquam tenetur nihil. Adipisci, voluptate dolores.</p>
                                                         </div>
                                                     </div>
@@ -382,7 +742,7 @@
                                                         </div>
                                                         <div class="whats-right-cap">
                                                            
-                                                            <h4><a href="latest_news.html">Portrait of group of friends ting eat. market in.</a></h4>
+                                                            <h4><a href="latest_news.html">Sub News title in short..</a></h4>
                                                             <p style="line-height: 17px;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus voluptatem nulla iure repellat magnam, perspiciatis fugiat tempore ex incidunt, cum quisquam explicabo laudantium temporibus numquam tenetur nihil. Adipisci, voluptate dolores.</p>
                                                         </div>
                                                     </div>
@@ -401,9 +761,8 @@
                                                     <img src="assets/img/trending/trending_top.jpg" alt="">
                                                 </div>
                                                 <div class="whates-caption">
-                                                    <h4><a href="#">Secretart for Economic Air
-                                                        plane that looks like</a></h4>
-                                                    <span>by Alice cloe   -   Jun 19, 2020</span>
+                                                    <h4><a href="#">News Title in Short...</a></h4>
+                                                    <span>by GST Staff   -  Jun 17, 2021</span>
                                                     <p>Struggling to sell one multi-million dollar home currently on the market won’t stop actress and singer Jennifer Lopez.</p>
                                                 </div>
                                             </div>
@@ -418,7 +777,7 @@
                                                         </div>
                                                         <div class="whats-right-cap">
                                                             
-                                                            <h4><a href="latest_news.html">Portrait of group of friends ting eat. market in.</a></h4>
+                                                            <h4><a href="latest_news.html">Sub News title in short..</a></h4>
                                                             <p style="line-height: 17px;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus voluptatem nulla iure repellat magnam, perspiciatis fugiat tempore ex incidunt, cum quisquam explicabo laudantium temporibus numquam tenetur nihil. Adipisci, voluptate dolores.</p>
                                                         </div>
                                                     </div>
@@ -429,7 +788,7 @@
                                                         </div>
                                                         <div class="whats-right-cap">
                                                             
-                                                            <h4><a href="latest_news.html">Portrait of group of friends ting eat. market in.</a></h4>
+                                                            <h4><a href="latest_news.html">Sub News title in short..</a></h4>
                                                             <p style="line-height: 17px;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus voluptatem nulla iure repellat magnam, perspiciatis fugiat tempore ex incidunt, cum quisquam explicabo laudantium temporibus numquam tenetur nihil. Adipisci, voluptate dolores.</p>
                                                         </div>
                                                     </div>
@@ -440,7 +799,7 @@
                                                         </div>
                                                         <div class="whats-right-cap">
                                                            
-                                                            <h4><a href="latest_news.html">Portrait of group of friends ting eat. market in.</a></h4>
+                                                            <h4><a href="latest_news.html">Sub News title in short..</a></h4>
                                                             <p style="line-height: 17px;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus voluptatem nulla iure repellat magnam, perspiciatis fugiat tempore ex incidunt, cum quisquam explicabo laudantium temporibus numquam tenetur nihil. Adipisci, voluptate dolores.</p>
                                                         </div>
                                                     </div>
@@ -459,9 +818,8 @@
                                                     <img src="assets/img/trending/trending_top.jpg" alt="">
                                                 </div>
                                                 <div class="whates-caption">
-                                                    <h4><a href="#">Secretart for Economic Air
-                                                        plane that looks like</a></h4>
-                                                    <span>by Alice cloe   -   Jun 19, 2020</span>
+                                                    <h4><a href="#">News Title in Short...</a></h4>
+                                                    <span>by GST Staff   -  Jun 17, 2021</span>
                                                     <p>Struggling to sell one multi-million dollar home currently on the market won’t stop actress and singer Jennifer Lopez.</p>
                                                 </div>
                                             </div>
@@ -476,7 +834,7 @@
                                                         </div>
                                                         <div class="whats-right-cap">
                                                             
-                                                            <h4><a href="latest_news.html">Portrait of group of friends ting eat. market in.</a></h4>
+                                                            <h4><a href="latest_news.html">Sub News title in short..</a></h4>
                                                             <p style="line-height: 17px;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus voluptatem nulla iure repellat magnam, perspiciatis fugiat tempore ex incidunt, cum quisquam explicabo laudantium temporibus numquam tenetur nihil. Adipisci, voluptate dolores.</p>
                                                         </div>
                                                     </div>
@@ -487,7 +845,7 @@
                                                         </div>
                                                         <div class="whats-right-cap">
                                                             
-                                                            <h4><a href="latest_news.html">Portrait of group of friends ting eat. market in.</a></h4>
+                                                            <h4><a href="latest_news.html">Sub News title in short..</a></h4>
                                                             <p style="line-height: 17px;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus voluptatem nulla iure repellat magnam, perspiciatis fugiat tempore ex incidunt, cum quisquam explicabo laudantium temporibus numquam tenetur nihil. Adipisci, voluptate dolores.</p>
                                                         </div>
                                                     </div>
@@ -498,7 +856,7 @@
                                                         </div>
                                                         <div class="whats-right-cap">
                                                            
-                                                            <h4><a href="latest_news.html">Portrait of group of friends ting eat. market in.</a></h4>
+                                                            <h4><a href="latest_news.html">Sub News title in short..</a></h4>
                                                             <p style="line-height: 17px;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus voluptatem nulla iure repellat magnam, perspiciatis fugiat tempore ex incidunt, cum quisquam explicabo laudantium temporibus numquam tenetur nihil. Adipisci, voluptate dolores.</p>
                                                         </div>
                                                     </div>
@@ -519,7 +877,7 @@
                                                 <div class="whates-caption">
                                                     <h4><a href="#">Secretart for Economic Air
                                                         plane that looks like</a></h4>
-                                                    <span>by Alice cloe   -   Jun 19, 2020</span>
+                                                    <span>by GST Staff   -  Jun 17, 2021</span>
                                                     <p>Struggling to sell one multi-million dollar home currently on the market won’t stop actress and singer Jennifer Lopez.</p>
                                                 </div>
                                             </div>
@@ -534,7 +892,7 @@
                                                         </div>
                                                         <div class="whats-right-cap">
                                                             
-                                                            <h4><a href="latest_news.html">Portrait of group of friends ting eat. market in.</a></h4>
+                                                            <h4><a href="latest_news.html">Sub News title in short..</a></h4>
                                                             <p style="line-height: 17px;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus voluptatem nulla iure repellat magnam, perspiciatis fugiat tempore ex incidunt, cum quisquam explicabo laudantium temporibus numquam tenetur nihil. Adipisci, voluptate dolores.</p>
                                                         </div>
                                                     </div>
@@ -545,7 +903,7 @@
                                                         </div>
                                                         <div class="whats-right-cap">
                                                             
-                                                            <h4><a href="latest_news.html">Portrait of group of friends ting eat. market in.</a></h4>
+                                                            <h4><a href="latest_news.html">Sub News title in short..</a></h4>
                                                             <p style="line-height: 17px;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus voluptatem nulla iure repellat magnam, perspiciatis fugiat tempore ex incidunt, cum quisquam explicabo laudantium temporibus numquam tenetur nihil. Adipisci, voluptate dolores.</p>
                                                         </div>
                                                     </div>
@@ -556,7 +914,7 @@
                                                         </div>
                                                         <div class="whats-right-cap">
                                                            
-                                                            <h4><a href="latest_news.html">Portrait of group of friends ting eat. market in.</a></h4>
+                                                            <h4><a href="latest_news.html">Sub News title in short..</a></h4>
                                                             <p style="line-height: 17px;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus voluptatem nulla iure repellat magnam, perspiciatis fugiat tempore ex incidunt, cum quisquam explicabo laudantium temporibus numquam tenetur nihil. Adipisci, voluptate dolores.</p>
                                                         </div>
                                                     </div>
@@ -570,53 +928,50 @@
                         </div>
                     </div>
                 </div>
+                
                 </div>
-                <div class="col-lg-4">
-                    <!-- Flow Socail -->
-                 
-                        <div class="blog_right_sidebar">
-                        <aside class="single_sidebar_widget popular_post_widget">
-                            <h3 class="widget_title">Download Documents</h3>
-                            <div class="media post_item">
-                                <img src="assets/img/post/post_1.png" alt="post">
-                                <div class="media-body">
-                                    <a href="single-blog.html">
-                                        <h3>GST Report 2021</h3>
+                <div class="col-lg-4 col-md-12 col-sm-12">
+                    <div class="blog_right_sidebar">
+                       
+                        <aside class="single_sidebar_widget post_category_widget">
+                            <h4 class="widget_title">Upcoming Events</h4>
+                            <ul class="list cat-list">
+                                <li>
+                                    <a href="#" class="d-flex flex-column">
+                                        <p>Tax payment made easy</p>
+                                        <br>
+                                        <span>17 June, 2021</span>
                                     </a>
-                                    <p><a href=""style="color:#538aaa;">Download</a></p>
-                                </div>
-                            </div>
-                            <div class="media post_item">
-                                <img src="assets/img/post/post_1.png" alt="post">
-                                <div class="media-body">
-                                    <a href="single-blog.html">
-                                        <h3>Tax forms</h3>
+                                </li>
+                                <li>
+                                    <a href="#" class="d-flex flex-column">
+                                        <p>Increase in GST Tax</p>
+                                        <br>
+                                        <span>17 June, 2021</span>
                                     </a>
-                                    <p><a href=""style="color:#538aaa;">Download</a></p>
-                                </div>
-                            </div>
-                            <div class="media post_item">
-                                <img src="assets/img/post/post_1.png" alt="post">
-                                <div class="media-body">
-                                    <a href="single-blog.html">
-                                        <h3>Consitution of bhutan </h3>
+                                </li>
+                                <li>
+                                    <a href="#" class="d-flex flex-column">
+                                        <p>GST website launched</p>
+                                        <br>
+                                        <span>17 June, 2021</span>
                                     </a>
-                                    <p><a href=""style="color:#538aaa;">Download</a></p>
-                                </div>
-                            </div>
-                            <div class="media post_item">
-                               <img src="assets/img/post/post_1.png" alt="post">
-                                <div class="media-body">
-                                    <a href="single-blog.html">
-                                        <h3>forms</h3>
+                                </li>
+                                <li>
+                                    <a href="#" class="d-flex flex-column">
+                                        <p>GST events</p>
+                                        <br>
+                                        <span>17 June, 2021</span>
                                     </a>
-                                    <p><a href=""style="color:#538aaa;">Download</a></p>
-                                </div>
-                            </div>
+                                </li>
+                               
+                              
+                            </ul>
                         </aside>
-                    
-                </div>
-                </div>
+
+                 
+            </div>
+        </div>
             </div>
         </div>
     </section>
@@ -641,7 +996,7 @@
                                     <div class="weekly2-news-active d-flex">
                                         <div class="weekly2-single">
                                             <div class="weekly2-img">
-                                                <img src="assets/img/icons/car.png" alt="">
+                                                <img src="assets/img/trending/trending_top.jpg" alt="">
                                             </div>
                                             <div class="weekly2-caption">
                                                 <h4><a href="#">Business Tax</a></h4>
@@ -652,7 +1007,7 @@
                                         <!-- Single -->
                                         <div class="weekly2-single">
                                             <div class="weekly2-img">
-                                                <img src="assets/img/icons/car.png" alt="">
+                                                <img src="assets/img/trending/trending_top.jpg" alt="">
                                             </div>
                                             <div class="weekly2-caption">
                                                 <h4><a href="#">Business Tax</a></h4>
@@ -662,7 +1017,7 @@
                                         </div> 
                                         <div class="weekly2-single">
                                             <div class="weekly2-img">
-                                                <img src="assets/img/icons/car.png" alt="">
+                                                <img src="assets/img/trending/trending_top.jpg" alt="">
                                             </div>
                                             <div class="weekly2-caption">
                                                 <h4><a href="#">Business Tax</a></h4>
@@ -673,7 +1028,7 @@
                                         <!-- Single -->
                                         <div class="weekly2-single">
                                             <div class="weekly2-img">
-                                                <img src="assets/img/icons/car.png" alt="">
+                                                <img src="assets/img/trending/trending_top.jpg" alt="">
                                             </div>
                                             <div class="weekly2-caption">
                                                 <h4><a href="#">Business Tax</a></h4>
@@ -682,22 +1037,24 @@
                                             </div>
                                         </div> 
                                     </div>
-                                    
+                                
                                 </div>
                             </div>
                         </div>
+                        
                     </div>
                      <!-- Banner -->
                  <div class="col-lg-4">
                     <div class="single-follow mb-45">
                         <div class="blog_right_sidebar">
                         <aside class="single_sidebar_widget popular_post_widget">
-                            <div class="small-tittle mb-20">
-                                <h4>GST Calender</h4>
-                            </div>
-                            <iframe src="https://calendar.google.com/calendar/embed?src=thinleycode2020.bhutan%40gmail.com&ctz=Asia%2FThimphu" style="border: 0" style="width: 100%; position: relative; "height="500" frameborder="0" scrolling="no"></iframe>
-                       </aside>
+                            
+                            <div class="googleCalendar">
+                                <iframe src="https://calendar.google.com/calendar/embed?src=thinley1996.bhutan%40gmail.com&ctz=Asia%2FThimphu" style="border: 0" width="800" height="680" frameborder="0" scrolling="no"></iframe>
                         </div>
+                        
+                        </div>
+                    </aside>
                     </div>
                 </div>
                 </div>
@@ -705,7 +1062,6 @@
             </div>
         </div>
     </div>  
-
     <footer>
         <!-- Footer Start-->
         <div class="footer-main footer-bg">
@@ -816,6 +1172,7 @@
                     </div>
                 </div>
             </div>
+            
             <!-- footer-bottom aera -->
             <div class="footer-bottom-area footer-bg">
                 <div class="container">
@@ -880,6 +1237,305 @@
     <!-- Jquery Plugins, main Jquery -->	
     <script src="./assets/js/plugins.js"></script>
     <script src="./assets/js/main.js"></script>
+    <script>
+        (function ($) {
+    $.fn.extend({
+        easyResponsiveTabs: function (options) {
+            //Set the default values, use comma to separate the settings, example:
+            var defaults = {
+                type: 'default', //default, vertical, accordion;
+                width: 'auto',
+                fit: true,
+                closed: false,
+                tabidentify: '',
+                activetab_bg: 'white',
+                inactive_bg: '#F5F5F5',
+                active_border_color: '#c1c1c1',
+                active_content_border_color: '#c1c1c1',
+                activate: function () {
+                }
+            }
+            //Variables
+            var options = $.extend(defaults, options);
+            var opt = options, jtype = opt.type, jfit = opt.fit, jwidth = opt.width, vtabs = 'vertical', accord = 'accordion';
+            var hash = window.location.hash;
+            var historyApi = !!(window.history && history.replaceState);
+
+            //Events
+            $(this).bind('tabactivate', function (e, currentTab) {
+                if (typeof options.activate === 'function') {
+                    options.activate.call(currentTab, e)
+                }
+            });
+
+            //Main function
+            this.each(function () {
+                var $respTabs = $(this);
+                var $respTabsList = $respTabs.find('ul.resp-tabs-list.' + options.tabidentify);
+                var respTabsId = $respTabs.attr('id');
+                $respTabs.find('ul.resp-tabs-list.' + options.tabidentify + ' li').addClass('resp-tab-item').addClass(options.tabidentify);
+                $respTabs.css({
+                    'display': 'block',
+                    'width': jwidth
+                });
+
+                if (options.type == 'vertical')
+                    $respTabsList.css('margin-top', '3px');
+
+                $respTabs.find('.resp-tabs-container.' + options.tabidentify).css('border-color', options.active_content_border_color);
+                $respTabs.find('.resp-tabs-container.' + options.tabidentify + ' > div').addClass('resp-tab-content').addClass(options.tabidentify);
+                jtab_options();
+                //Properties Function
+                function jtab_options() {
+                    if (jtype == vtabs) {
+                        $respTabs.addClass('resp-vtabs').addClass(options.tabidentify);
+                    }
+                    if (jfit == true) {
+                        $respTabs.css({ width: '100%', margin: '0px' });
+                    }
+                    if (jtype == accord) {
+                        $respTabs.addClass('resp-easy-accordion').addClass(options.tabidentify);
+                        $respTabs.find('.resp-tabs-list').css('display', 'none');
+                    }
+                }
+
+                //Assigning the h2 markup to accordion title
+                var $tabItemh2;
+                $respTabs.find('.resp-tab-content.' + options.tabidentify).before("<h2 class='resp-accordion " + options.tabidentify + "' role='tab'><span class='resp-arrow'></span></h2>");
+
+                $respTabs.find('.resp-tab-content.' + options.tabidentify).prev("h2").css({
+                    'background-color': options.inactive_bg,
+                    'border-color': options.active_border_color
+                });
+
+                var itemCount = 0;
+                $respTabs.find('.resp-accordion').each(function () {
+                    $tabItemh2 = $(this);
+                    var $tabItem = $respTabs.find('.resp-tab-item:eq(' + itemCount + ')');
+                    var $accItem = $respTabs.find('.resp-accordion:eq(' + itemCount + ')');
+                    $accItem.append($tabItem.html());
+                    $accItem.data($tabItem.data());
+                    $tabItemh2.attr('aria-controls', options.tabidentify + '_tab_item-' + (itemCount));
+                    itemCount++;
+                });
+
+                //Assigning the 'aria-controls' to Tab items
+                var count = 0,
+                    $tabContent;
+                $respTabs.find('.resp-tab-item').each(function () {
+                    $tabItem = $(this);
+                    $tabItem.attr('aria-controls', options.tabidentify + '_tab_item-' + (count));
+                    $tabItem.attr('role', 'tab');
+                    $tabItem.css({
+                        'background-color': options.inactive_bg,
+                        'border-color': 'none'
+                    });
+
+                    //Assigning the 'aria-labelledby' attr to tab-content
+                    var tabcount = 0;
+                    $respTabs.find('.resp-tab-content.' + options.tabidentify).each(function () {
+                        $tabContent = $(this);
+                        $tabContent.attr('aria-labelledby', options.tabidentify + '_tab_item-' + (tabcount)).css({
+                            'border-color': options.active_border_color
+                        });
+                        tabcount++;
+                    });
+                    count++;
+                });
+
+                // Show correct content area
+                var tabNum = 0;
+                if (hash != '') {
+                    var matches = hash.match(new RegExp(respTabsId + "([0-9]+)"));
+                    if (matches !== null && matches.length === 2) {
+                        tabNum = parseInt(matches[1], 10) - 1;
+                        if (tabNum > count) {
+                            tabNum = 0;
+                        }
+                    }
+                }
+
+                //Active correct tab
+                $($respTabs.find('.resp-tab-item.' + options.tabidentify)[tabNum]).addClass('resp-tab-active').css({
+                    'background-color': options.activetab_bg,
+                    'border-color': options.active_border_color
+                });
+
+                //keep closed if option = 'closed' or option is 'accordion' and the element is in accordion mode
+                if (options.closed !== true && !(options.closed === 'accordion' && !$respTabsList.is(':visible')) && !(options.closed === 'tabs' && $respTabsList.is(':visible'))) {
+                    $($respTabs.find('.resp-accordion.' + options.tabidentify)[tabNum]).addClass('resp-tab-active').css({
+                        'background-color': options.activetab_bg + ' !important',
+                        'border-color': options.active_border_color,
+                        'background': 'none'
+                    });
+
+                    $($respTabs.find('.resp-tab-content.' + options.tabidentify)[tabNum]).addClass('resp-tab-content-active').addClass(options.tabidentify).attr('style', 'display:block');
+                }
+                //assign proper classes for when tabs mode is activated before making a selection in accordion mode
+                else {
+                   // $($respTabs.find('.resp-tab-content.' + options.tabidentify)[tabNum]).addClass('resp-accordion-closed'); //removed resp-tab-content-active
+                }
+
+                //Tab Click action function
+                $respTabs.find("[role=tab]").each(function () {
+
+                    var $currentTab = $(this);
+                    $currentTab.click(function () {
+
+                        var $currentTab = $(this);
+                        var $tabAria = $currentTab.attr('aria-controls');
+
+                        if ($currentTab.hasClass('resp-accordion') && $currentTab.hasClass('resp-tab-active')) {
+                            $respTabs.find('.resp-tab-content-active.' + options.tabidentify).slideUp('', function () {
+                                $(this).addClass('resp-accordion-closed');
+                            });
+                            $currentTab.removeClass('resp-tab-active').css({
+                                'background-color': options.inactive_bg,
+                                'border-color': 'none'
+                            });
+                            return false;
+                        }
+                        if (!$currentTab.hasClass('resp-tab-active') && $currentTab.hasClass('resp-accordion')) {
+                            $respTabs.find('.resp-tab-active.' + options.tabidentify).removeClass('resp-tab-active').css({
+                                'background-color': options.inactive_bg,
+                                'border-color': 'none'
+                            });
+                            $respTabs.find('.resp-tab-content-active.' + options.tabidentify).slideUp().removeClass('resp-tab-content-active resp-accordion-closed');
+                            $respTabs.find("[aria-controls=" + $tabAria + "]").addClass('resp-tab-active').css({
+                                'background-color': options.activetab_bg,
+                                'border-color': options.active_border_color
+                            });
+
+                            $respTabs.find('.resp-tab-content[aria-labelledby = ' + $tabAria + '].' + options.tabidentify).slideDown().addClass('resp-tab-content-active');
+                        } else {
+                            console.log('here');
+                            $respTabs.find('.resp-tab-active.' + options.tabidentify).removeClass('resp-tab-active').css({
+                                'background-color': options.inactive_bg,
+                                'border-color': 'none'
+                            });
+
+                            $respTabs.find('.resp-tab-content-active.' + options.tabidentify).removeAttr('style').removeClass('resp-tab-content-active').removeClass('resp-accordion-closed');
+
+                            $respTabs.find("[aria-controls=" + $tabAria + "]").addClass('resp-tab-active').css({
+                                'background-color': options.activetab_bg,
+                                'border-color': options.active_border_color
+                            });
+
+                            $respTabs.find('.resp-tab-content[aria-labelledby = ' + $tabAria + '].' + options.tabidentify).addClass('resp-tab-content-active').attr('style', 'display:block');
+                        }
+                        //Trigger tab activation event
+                        $currentTab.trigger('tabactivate', $currentTab);
+
+                        //Update Browser History
+                        if (historyApi) {
+                            var currentHash = window.location.hash;
+                            var tabAriaParts = $tabAria.split('tab_item-');
+                            // var newHash = respTabsId + (parseInt($tabAria.substring(9), 10) + 1).toString();
+                            var newHash = respTabsId + (parseInt(tabAriaParts[1], 10) + 1).toString();
+                            if (currentHash != "") {
+                                var re = new RegExp(respTabsId + "[0-9]+");
+                                if (currentHash.match(re) != null) {
+                                    newHash = currentHash.replace(re, newHash);
+                                }
+                                else {
+                                    newHash = currentHash + "|" + newHash;
+                                }
+                            }
+                            else {
+                                newHash = '#' + newHash;
+                            }
+
+                            history.replaceState(null, null, newHash);
+                        }
+                    });
+
+                });
+
+                //Window resize function                   
+                $(window).resize(function () {
+                    $respTabs.find('.resp-accordion-closed').removeAttr('style');
+                });
+            });
+        }
+    });
+})(jQuery);
+
+
+    </script>
+    	<!--Plug-in Initialisation-->
+	<script type="text/javascript">
+    $(document).ready(function() {
+
+$(".fa-search").click(function() {
+   $(".togglesearch").toggle();
+   $("input[type='text']").focus();
+ });
+
+});
+        $(document).ready(function() {
+            //Horizontal Tab
+            $('#parentHorizontalTab').easyResponsiveTabs({
+                type: 'default', //Types: default, vertical, accordion
+                width: 'auto', //auto or any width like 600px
+                fit: true, // 100% fit in a container
+                tabidentify: 'hor_1', // The tab groups identifier
+                activate: function(event) { // Callback function if tab is switched
+                    var $tab = $(this);
+                    var $info = $('#nested-tabInfo');
+                    var $name = $('span', $info);
+                    $name.text($tab.text());
+                    $info.show();
+                }
+            });
+    
+            // Child Tab
+            $('#ChildVerticalTab_1').easyResponsiveTabs({
+                type: 'vertical',
+                width: 'auto',
+                fit: true,
+                tabidentify: 'ver_1', // The tab groups identifier
+                activetab_bg: '#fff', // background color for active tabs in this group
+                inactive_bg: '#F5F5F5', // background color for inactive tabs in this group
+                active_border_color: '#c1c1c1', // border color for active tabs heads in this group
+                active_content_border_color: '#5AB1D0' // border color for active tabs contect in this group so that it matches the tab head border
+            });
+            $('#ChildVerticalTab_2').easyResponsiveTabs({
+                type: 'vertical',
+                width: 'auto',
+                fit: true,
+                tabidentify: 'ver_2', // The tab groups identifier
+                activetab_bg: '#fff', // background color for active tabs in this group
+                inactive_bg: '#F5F5F5', // background color for inactive tabs in this group
+                active_border_color: '#c1c1c1', // border color for active tabs heads in this group
+                active_content_border_color: '#5AB1D0' // border color for active tabs contect in this group so that it matches the tab head border
+            });
+            $('#ChildVerticalTab_3').easyResponsiveTabs({
+                type: 'vertical',
+                width: 'auto',
+                fit: true,
+                tabidentify: 'ver_3', // The tab groups identifier
+                activetab_bg: '#fff', // background color for active tabs in this group
+                inactive_bg: '#F5F5F5', // background color for inactive tabs in this group
+                active_border_color: '#c1c1c1', // border color for active tabs heads in this group
+                active_content_border_color: '#5AB1D0' // border color for active tabs contect in this group so that it matches the tab head border
+            });
+            //Vertical Tab
+            $('#parentVerticalTab').easyResponsiveTabs({
+                type: 'vertical', //Types: default, vertical, accordion
+                width: 'auto', //auto or any width like 600px
+                fit: true, // 100% fit in a container
+                closed: 'accordion', // Start closed if in accordion view
+                tabidentify: 'hor_1', // The tab groups identifier
+                activate: function(event) { // Callback function if tab is switched
+                    var $tab = $(this);
+                    var $info = $('#nested-tabInfo2');
+                    var $name = $('span', $info);
+                    $name.text($tab.text());
+                    $info.show();
+                }
+            });
+        });
+        </script>
     
 </body>
 </html>
